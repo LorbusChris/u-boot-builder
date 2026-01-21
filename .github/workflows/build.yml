@@ -42,23 +42,23 @@ jobs:
     runs-on: ubuntu-24.04-arm
     steps:
       - name: Checkout u-boot repo
-        uses: actions/checkout@v6
-        with:
-          repository: ${{ inputs.repo }}
-          ref: ${{ inputs.ref }}
+        run: |
+          git clone ${{ inputs.repo }} u-boot
+          cd u-boot
+          git checkout ${{ inputs.ref }}
 
       - name: Checkout this repo
         uses: actions/checkout@v6
         with:
-          path: builder
+          path: u-boot/builder
 
       - name: Build u-boot
         run: |
-          cd builder
+          cd u-boot/builder
           ./build_container.sh "${{ inputs.config }}" "${{ inputs.device_tree }}"
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: u-boot-${{ inputs.device }}
-          path: ./builder/output
+          path: ./u-boot/builder/output
