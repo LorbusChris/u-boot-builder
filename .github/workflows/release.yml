@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          pattern: u-boot-*.img
+          pattern: u-boot-*
           path: output/
           merge-multiple: true
       - name: Get current date
