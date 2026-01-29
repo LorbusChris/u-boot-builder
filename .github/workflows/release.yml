@@ -24,6 +24,11 @@ jobs:
             ref: 6fc40f2499b1a517487933d7d81a482f6dce7751
             config: "qcom_defconfig phone.config"
             device_tree: "qcom/sdm845-xiaomi-beryllium-tianma"
+          - device: fairphone-fp5
+            repo: https://git.codelinaro.org/clo/qcomlt/u-boot.git
+            ref: 6fc40f2499b1a517487933d7d81a482f6dce7751
+            config: "qcom_defconfig phone.config"
+            device_tree: "qcom/qcm6490-fairphone-fp5"
     uses: ./.github/workflows/build.yml
     with:
       device: ${{ matrix.target.device }}
