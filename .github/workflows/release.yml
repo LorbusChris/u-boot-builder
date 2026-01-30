@@ -2,11 +2,17 @@ name: Build all & release
 permissions:
   contents: write
 on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
   workflow_dispatch:
     inputs:
       tag:
         type: string
-        required: true
+        required: false
 
 jobs:
   build:
@@ -25,10 +31,11 @@ jobs:
             config: "qcom_defconfig phone.config"
             device_tree: "qcom/sdm845-xiaomi-beryllium-tianma"
           - device: fairphone-fp5
-            repo: https://git.codelinaro.org/clo/qcomlt/u-boot.git
-            ref: 6fc40f2499b1a517487933d7d81a482f6dce7751
-            config: "qcom_defconfig phone.config"
+            repo: https://gitlab.postmarketos.org/tauchgang/u-boot.git
+            ref: c7bb00279d79393f14883685fd07434fba3a679e
+            config: "qcom_defconfig qcom-phone.config"
             device_tree: "qcom/qcm6490-fairphone-fp5"
+            header_version: "2"
     uses: ./.github/workflows/build.yml
     with:
       device: ${{ matrix.target.device }}
@@ -36,8 +43,10 @@ jobs:
       ref: ${{ matrix.target.ref }}
       config: ${{ matrix.target.config }}
       device_tree: ${{ matrix.target.device_tree }}
+      header_version: ${{ matrix.target.header_version }}
 
   release:
+    if: github.event_name == 'workflow_dispatch' && inputs.tag != ''
     needs: [ build ]
     runs-on: ubuntu-latest
     steps:
