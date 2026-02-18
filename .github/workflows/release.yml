@@ -22,8 +22,8 @@ jobs:
         target:
           - device: fairphone-fp5
             repo: https://github.com/LorbusChris/u-boot.git
-            ref: c02abf28242b57cb22be6a4568eb13dcfa71a0d2
-            config: "qcom_defconfig qcom-phone.config"
+            ref: 0031cc83a4455d8aa4786788fde25d1690ba6701
+            config: "qcm6490_defconfig qcom-phone.config"
             device_tree: "qcom/qcm6490-fairphone-fp5"
             header_version: "2"
     uses: ./.github/workflows/build.yml
