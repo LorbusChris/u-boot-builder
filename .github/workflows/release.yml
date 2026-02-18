@@ -33,7 +33,7 @@ jobs:
           - device: fairphone-fp5
             repo: https://gitlab.postmarketos.org/tauchgang/u-boot.git
             ref: 0031cc83a4455d8aa4786788fde25d1690ba6701
-            config: "qcm6490_defconfig qcom-phone.config"
+            config: "qcom_defconfig qcom-phone.config"
             device_tree: "qcom/qcm6490-fairphone-fp5"
             header_version: "2"
     uses: ./.github/workflows/build.yml
