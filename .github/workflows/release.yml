@@ -31,8 +31,8 @@ jobs:
             config: "qcom_defconfig phone.config"
             device_tree: "qcom/sdm845-xiaomi-beryllium-tianma"
           - device: fairphone-fp5
-            repo: https://github.com/LorbusChris/u-boot.git
-            ref: 1a46c44377e98941ba0ece9174091e3cc4d1e0fb
+            repo: https://gitlab.postmarketos.org/tauchgang/u-boot.git
+            ref: c7bb00279d79393f14883685fd07434fba3a679e
             config: "qcm6490_defconfig qcom-phone.config"
             device_tree: "qcom/qcm6490-fairphone-fp5"
             header_version: "2"
