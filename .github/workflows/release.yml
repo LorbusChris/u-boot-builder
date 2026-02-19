@@ -22,7 +22,7 @@ jobs:
         target:
           - device: fairphone-fp5
             repo: https://github.com/u-boot/u-boot.git
-            ref: b99da05e1538b8fa153322da82917af2aa27e1d6
+            ref: 7dca54ef4c44c82bdc6716ac6cdc84c22c66e9ed
             config: "qcm6490_defconfig qcom-phone.config"
             device_tree: "qcom/qcm6490-fairphone-fp5"
             header_version: "2"
