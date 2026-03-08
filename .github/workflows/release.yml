@@ -21,8 +21,8 @@ jobs:
       matrix:
         target:
           - device: fairphone-fp5
-            repo: https://github.com/LorbusChris/u-boot.git
-            ref: a4c0db27b729d9d58bd78cd9dcf0ffed78bcb48b
+            repo: https://source.denx.de/u-boot/u-boot
+            ref: next
             config: "qcm6490_defconfig qcom-phone.config"
             device_tree: "qcom/qcm6490-fairphone-fp5"
             header_version: "2"
