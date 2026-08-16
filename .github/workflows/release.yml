@@ -27,7 +27,7 @@ jobs:
           - device: fairphone-fp5
             repo: https://source.denx.de/u-boot/u-boot
             # u-boot next, pinned for reproducible builds (2026-08-14)
-            ref: 7581a12eb96c8b8825b65a9c597696cb28cb6155
+            ref: d3e8597e46b635ec556a057bc42f0b0859654bdf
             config: "qcm6490_defconfig qcom-phone.config"
             device_tree: "qcom/qcm6490-fairphone-fp5"
             header_version: "2"
