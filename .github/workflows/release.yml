@@ -26,7 +26,8 @@ jobs:
             device_tree: "qcom/sdm845-xiaomi-beryllium-tianma"
           - device: fairphone-fp5
             repo: https://source.denx.de/u-boot/u-boot
-            ref: next
+            # u-boot next, pinned for reproducible builds (2026-08-14)
+            ref: 7581a12eb96c8b8825b65a9c597696cb28cb6155
             config: "qcm6490_defconfig qcom-phone.config"
             device_tree: "qcom/qcm6490-fairphone-fp5"
             header_version: "2"
